@@ -1,0 +1,158 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background: black;
+    outline: none;
+}
+
+.node {
+    fill: white;
+    stroke: black;
+    stroke-width: 2px;
+    cursor: default;
+}
+
+.text {
+    font-size: 14px;
+    fill: black;
+    pointer-events: none;
+}
+
+line {
+    stroke: #7f8c8d;
+    stroke-width: 2;
+} */
+
+.skills-section {
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #dc3545;
+}
+
+.skill-card {
+    perspective: 1000px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.skill-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.skill-card:hover .skill-card-inner {
+    transform: rotateY(180deg);
+}
+
+.skill-card-front,
+.skill-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-card-front {
+    background-color: #fff;
+    color: #333;
+}
+
+.skill-card-back {
+    background-color: #fff;
+    color: #333;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+
+.skill-items {
+    width: 100%;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.skill-item span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.progress {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 1.5s ease-in-out;
+}
+
+/* Animation for progress bars */
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+}
+
+.progress-bar {
+    animation: progressAnimation 1.5s ease-in-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-card {
+        height: 250px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
